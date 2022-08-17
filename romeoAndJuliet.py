@@ -1,6 +1,6 @@
 import MostRepeatedWord
 
-def RomeoNJuliet(Dict):
+def Romeo_and_Juliet(Dict):
 	Couple = dict()
 	for key, value in Dict.items():
 		if key == 'romeo':
@@ -9,7 +9,7 @@ def RomeoNJuliet(Dict):
 			Couple[key] = value
 	return Couple
 
-def AnyWord(Dict):
+def any_word(Dict):
 	YourWord = input('What word do you want to know how many times it appear: ')
 	WordOutput = dict()
 	for key, value in Dict.items():
@@ -23,4 +23,4 @@ def AnyWord(Dict):
 if __name__ == "__main__":
 	file = open('romeo.txt', 'r')
 	aux = MostRepeatedWord.word_count(file)
-	print(AnyWord(aux))
+	print(any_word(aux))
