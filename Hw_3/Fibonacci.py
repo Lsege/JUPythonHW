@@ -15,11 +15,8 @@ def Fibonacci(term):
 
 	return Xn
 
-for i in range(3):
-	print(i)
 
-
-#print(Fibonacci(2))
+print(Fibonacci(15))
 
 
 
