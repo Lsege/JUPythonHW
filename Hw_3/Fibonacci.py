@@ -1,3 +1,6 @@
+import sys
+
+
 def Fibonacci(term):
 	if term == 0: return 0
 	elif term == 1: return 1
@@ -15,8 +18,8 @@ def Fibonacci(term):
 
 	return Xn
 
-
-print(Fibonacci(15))
+value = int(sys.argv[1])
+print(Fibonacci(value))
 
 
 
