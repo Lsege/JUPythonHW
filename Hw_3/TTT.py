@@ -26,33 +26,25 @@ def second_player_move(position):
 
 def coulumn_win(row1, row2, row3):
 	for i in range(3):
-		if row1[i] == row2[i]  and row1[i] == row3[i] and row1[i] != '-':
-			return True
-	return False
+		if row1[i] == row2[i]  and row1[i] == row3[i] and row1[i] != '-': return True
+
 
 def row_win(row1, row2, row3):
-	if row1[0] == row1[1] and row1[0] == row1[2] and row1[0] != '-':
-		return True
-	elif row2[0] == row2[1] and row2[0] == row2[2] and row2[0] != '-':
-		return True
-	elif row3[0] == row3[1] and row3[0] == row3[2] and row3[0] != '-':
-		return True
-	return False
+	if row1[0] == row1[1] and row1[0] == row1[2] and row1[0] != '-': return True
+	elif row2[0] == row2[1] and row2[0] == row2[2] and row2[0] != '-': return True
+	elif row3[0] == row3[1] and row3[0] == row3[2] and row3[0] != '-': return True
+
 
 def cross_win(row1, row2, row3):
-	if row1[0] == row2[1] and row1[0] == row3[2] and row1[0] != '-':
-		return True
-	elif row3[0] == row2[1] and row3[0] == row1[2] and row3[0] != '-':
-		return True
-	return False	
+	if row1[0] == row2[1] and row1[0] == row3[2] and row1[0] != '-': return True
+	elif row3[0] == row2[1] and row3[0] == row1[2] and row3[0] != '-': return True
+	
 
 def end_game(row1, row2, row3):
-	if row_win(row1, row2, row3):
-		return True
-	elif coulumn_win(row1, row2, row3):
-		return True
-	elif cross_win(row1, row2, row3):
-		return True
+	if row_win(row1, row2, row3): return True
+	elif coulumn_win(row1, row2, row3): return True
+	elif cross_win(row1, row2, row3): return True
+
 
 def show_grid(row1, row2, row3):
 	print(f'  {row1[0]} | {row1[1]} | {row1[2]}')
@@ -68,6 +60,7 @@ win = False
 
 while not win:
 	position = int(input('Insert the position you want to put your simbol: '))-1
+	
 	count +=1
 	if count % 2 == 1:
 		first_player_move(position)
@@ -75,8 +68,15 @@ while not win:
 		second_player_move(position)
 
 	show_grid(row1, row2, row3)
+
+	if count == 9:
+		break
+
 	win = end_game(row1, row2, row3)
 
-print('You win')
+if win: 
+	print('You win')
+else:
+	print('Game tied')
 
 
