@@ -1,0 +1,22 @@
+Crear el objeto lista con los siguientes 4 métodos:
+Append
+Set y Get
+Iterar la lista
+Mostrar los valores separados por algo
+
+## Hash tables
+Encontrar el valor a través de una key
+Podríamos usar esto para agregar valores.
+
+## Length
+Cada vez que se agrega un valor a la lista, este len se utiliza para 
+agregar un valor en el último y también para conocer su longitud
+Por esa razón utilizamos la misma variable para append y length
+
+## Append
+Como tenemos un contador que tiene de valor el tamaño de nuestra lista,
+y por las propiedades de las listas que arrancan desde 0
+podemos asignar en su lugar un nuevo valor y este será 
+el indice siguiente al último indice de nuestra lista
+
+## 

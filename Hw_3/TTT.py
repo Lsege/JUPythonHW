@@ -1,6 +1,6 @@
-def create_row():
+def create_row(width):
 	row= []
-	for i in range(3):
+	for i in range(width):
 		row.append('-')
 	return row
 
@@ -46,15 +46,15 @@ def end_game(row1, row2, row3):
 	elif cross_win(row1, row2, row3): return True
 
 
-def show_grid(row1, row2, row3):
+def show_rows(row1, row2, row3):
 	print(f'  {row1[0]} | {row1[1]} | {row1[2]}')
 	print(f'  {row2[0]} | {row2[1]} | {row2[2]}')
 	print(f'  {row3[0]} | {row3[1]} | {row3[2]}')
 
 
-row1 = create_row()
-row2 = create_row()
-row3 = create_row()
+row1 = create_row(8)
+row2 = create_row(8)
+row3 = create_row(8)
 count = 0
 win = False
 
@@ -67,7 +67,7 @@ while not win:
 	else:
 		second_player_move(position)
 
-	show_grid(row1, row2, row3)
+	show_rows(row1, row2, row3)
 
 	if count == 9:
 		break

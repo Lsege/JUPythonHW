@@ -16,8 +16,8 @@ def Fibonacci(term):
 			N_1 = Xn
 	return Xn
 
-value = int(sys.argv[1])
-print(Fibonacci(value))
+#value = int(sys.argv[1])
+print(Fibonacci(1000000))
 
 
 
